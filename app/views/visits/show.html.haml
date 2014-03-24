@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @visit.date
+%p
+  %b Datetime:
+  = @visit.datetime
+%p
+  %b Practice:
+  = @visit.practice_id
+%p
+  %b Activity:
+  = @visit.activity_id
+
+= link_to 'Edit', edit_visit_path(@visit)
+\|
+= link_to 'Back', visits_path

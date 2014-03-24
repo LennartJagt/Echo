@@ -1,0 +1,39 @@
+%h1 Listing practices
+
+%table
+  %tr
+    %th Name
+    %th Telephone
+    %th Vat number
+    %th Email address
+    %th Bank account number
+    %th Owner first name
+    %th Owner last name
+    %th Street  
+    %th Number
+    %th Zip Code
+    %th Town
+    %th
+    %th
+    %th
+
+  - @practices.each do |practice|
+    %tr
+      %td= practice.name
+      %td= practice.telephone
+      %td= practice.vat_number
+      %td= practice.email_address
+      %td= practice.bank_account_number
+      %td= practice.owner_first_name
+      %td= practice.owner_last_name
+      %td= practice.address.street
+      %td= practice.address.street_number
+      %td= practice.address.zip_code
+      %td= practice.address.town
+      %td= link_to 'Show', practice
+      %td= link_to 'Edit', edit_practice_path(practice)
+      %td= link_to 'Destroy', practice, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Practice', new_practice_path

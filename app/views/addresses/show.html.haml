@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Street:
+  = @address.street
+%p
+  %b Stree number:
+  = @address.street_number
+%p
+  %b Zip code:
+  = @address.zip_code
+%p
+  %b Town:
+  = @address.town
+
+= link_to 'Edit', edit_address_path(@address)
+\|
+= link_to 'Back', addresses_path

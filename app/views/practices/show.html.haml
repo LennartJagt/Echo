@@ -1,0 +1,35 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @practice.name
+%p
+  %b Telephone:
+  = @practice.telephone
+%p
+  %b Vat number:
+  = @practice.vat_number
+%p
+  %b Email address:
+  = @practice.email_address
+%p
+  %b Bank account number:
+  = @practice.bank_account_number
+%p
+  %b Owner first name:
+  = @practice.owner_first_name
+%p
+  %b Owner last name:
+  = @practice.owner_last_name
+%p 
+  %b Street
+  = @practice.address.street
+  = @practice.address.street_number
+%p
+  %b Postcode woonplaats
+  =@practice.address.zip_code
+  =@practice.address.town
+
+= link_to 'Edit', edit_practice_path(@practice)
+\|
+= link_to 'Back', practices_path

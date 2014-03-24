@@ -1,0 +1,47 @@
+= form_for @practice do |f|
+  - if @practice.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@practice.errors.count, "error")} prohibited this practice from being saved:"
+      %ul
+        - @practice.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :telephone
+    = f.text_field :telephone
+  .field
+    = f.label :vat_number
+    = f.text_field :vat_number
+  .field
+    = f.label :email_address
+    = f.text_field :email_address
+  .field
+    = f.label :bank_account_number
+    = f.text_field :bank_account_number
+  .field
+    = f.label :owner_first_name
+    = f.text_field :owner_first_name
+  .field
+    = f.label :owner_last_name
+    = f.text_field :owner_last_name
+    
+  =f.fields_for :address do |builder|
+    .field
+      =builder.label :street
+      =builder.text_field :street
+    .field
+      =builder.label :street_number
+      =builder.text_field :street_number
+    .field
+      =builder.label :zip_code
+      =builder.text_field :zip_code
+    .field
+      =builder.label :town
+      =builder.text_field :town
+    
+  
+  .actions
+    = f.submit 'Save'

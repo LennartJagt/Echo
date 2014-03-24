@@ -1,0 +1,17 @@
+!!! 5
+%html
+  %head
+    %title Echo
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    %h3 Eerstelijns Dierenecho's
+    = link_to 'New Practice', new_practice_path
+    = link_to 'New Visit', new_visit_path
+    = link_to 'New Activity', new_activity_path
+    
+    = link_to 'Practices',  practices_path
+    = link_to 'Visits', visits_path
+    = link_to 'Activities', activities_path
+    = yield
